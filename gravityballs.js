@@ -1,6 +1,7 @@
 const canvas = document.querySelector('canvas');
 canvas.height = window.height;
 canvas.width = canvas.width;
+document.write("HELLO THERE!")
 let fwArray;
 
 
