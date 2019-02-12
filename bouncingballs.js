@@ -123,7 +123,7 @@ function distance(x1, y1, x2, y2) {
 let particles2;
 function init() {
     particles2 = [];
-    for(let i = 0; i < 20; i++) {
+    for(let i = 0; i < 13; i++) {
         const radius = 40;
         let x = randomIntFromRange(radius, canvas.width - radius);
         let y = randomIntFromRange(radius, canvas.height - radius);
