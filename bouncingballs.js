@@ -159,7 +159,7 @@ addEventListener('click',function() {
 //Animation Loop
 function animate() {
     requestAnimationFrame(animate);
-    c.fillStyle = 'rgba(0, 0, 0, 0.35)';
+    c.fillStyle = 'rgba(0, 0, 0, 0.50)';
     c.fillRect(0, 0, canvas.width, canvas.height);
     particles2.forEach(particle => {
         particle.update(particles2);
