@@ -94,6 +94,7 @@ function Particle2(x, y, radius, color) {
 
             this.x += this.velocity.x;
             this.y += this.velocity.y;
+            //this.color = ;
         }
         this.draw();
     }
@@ -123,11 +124,12 @@ function distance(x1, y1, x2, y2) {
 let particles2;
 function init() {
     particles2 = [];
+    let Colors = ['#00FF00', '#FAA916', '#1AFFD5', '#58FAF4', '#FE2E2E', '#FF00FF', '#FFFF00']
     for(let i = 0; i < 13; i++) {
         const radius = 40;
         let x = randomIntFromRange(radius, canvas.width - radius);
         let y = randomIntFromRange(radius, canvas.height - radius);
-        const color = '#00FF00';
+        const color = Colors[Math.floor(Math.random() * Colors.length)]//'#00FF00';
 
         if(i != 0) {
             for(let j = 0; j < particles2.length; j++) {
