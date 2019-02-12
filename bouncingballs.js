@@ -1,6 +1,6 @@
 const canvas = document.querySelector('canvas');
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 var c = canvas.getContext('2d');
 
 const colors = [
@@ -85,18 +85,12 @@ function Particle2(x, y, radius, color) {
             if(distance(this.x, this.y, particles2[i].x, particles2[i].y) - this.radius * 2 < 0) {
                 resolveCollision(this, particles2[i]);
             }
-            if(this.x - this.radius <= 0 || this.x + this.radius >= canvas.innerWidth) {
+            if(this.x - this.radius <= 0 || this.x + this.radius >= canvas.width) {
                 this.velocity.x = -this.velocity.x
             }
-            if(this.y - this.radius <= 0 || this.y + this.radius >= canvas.innerHeight) {
+            if(this.y - this.radius <= 0 || this.y + this.radius >= canvas.height) {
                 this.velocity.y = -this.velocity.y;
             }
-            //Mouse Collision Detection
-            if(distance(mouse.x, mouse.y, this.x, this.y) < this.radius) {
-                
-            }
-
-
 
             this.x += this.velocity.x;
             this.y += this.velocity.y;
@@ -109,6 +103,7 @@ function Particle2(x, y, radius, color) {
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
         c.strokeStyle = this.color
         c.stroke();
+        c.lineWidth = '5'
         c.fillStyle = 'black';
         c.fill();
         c.closePath();
@@ -117,7 +112,7 @@ function Particle2(x, y, radius, color) {
 }
 
 
-function Particle(x, y, radius, color) {
+/*function Particle(x, y, radius, color) {
     this.x = x;
     this.y = y;
     this.radius = radius;
@@ -150,7 +145,7 @@ function Particle(x, y, radius, color) {
         c.closePath();
 
     };
-}
+}*/
 function distance(x1, y1, x2, y2) {
     let xDistance = x2 - x1;
     let yDistance = y2 - y1;
@@ -161,11 +156,7 @@ function distance(x1, y1, x2, y2) {
 
 
 //Init
-let MOUSE;
 let particles2;
-//var ball;
-//var ballArray;
-let particles;
 function init() {
     particles2 = [];
     for(let i = 0; i < 20; i++) {
@@ -187,12 +178,12 @@ function init() {
 
         particles2.push(new Particle2(x, y, radius, color));
     }
-    particles = [];
+    /*particles = [];
     for(let i = 0; i < 100; i++) {
         const radius = (Math.random() * 6) + 1
         const color9 = colors[Math.floor(Math.random() * colors.length)]
         particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius, color9));
-    };
+    };*/
 
 
 
@@ -210,11 +201,11 @@ addEventListener('click',function() {
 //Animation Loop
 function animate() {
     requestAnimationFrame(animate);
-    c.fillStyle = 'rgba(0, 0, 255, 0.15)';
+    c.fillStyle = 'rgba(0, 0, 0, 0.15)';
     c.fillRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(particle => {
+    /*particles.forEach(particle => {
         particle.update();
-    });
+    });*/
     particles2.forEach(particle => {
         particle.update(particles2);
     });
