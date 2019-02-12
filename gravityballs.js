@@ -1,7 +1,6 @@
 const canvas = document.querySelector('canvas');
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
-document.write("HELLO THERE!")
 let fwArray;
 
 
@@ -16,7 +15,7 @@ function Firework(x, y, vel, radius) {
     this.radius = radius;
     this.color = 'yellow';
     this.update = function() {
-        if(this.x - this.radius - 30 <= 0 || this.x + this.radius + 30>= innerWidth) {
+        if(this.x - this.radius - 30 <= 0 || this.x + this.radius + 30>= canvas.width) {
             this.xVel = -this.xVel;
         }
         if(this.y + this.radius + 20> canvas.height) {
