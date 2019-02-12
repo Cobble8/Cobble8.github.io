@@ -111,48 +111,12 @@ function Particle2(x, y, radius, color) {
 
 }
 
-
-/*function Particle(x, y, radius, color) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    this.color7 = color;
-    this.radians = Math.random() * Math.PI * 2;
-    this.velocity = 0.05;
-    this.distanceFromCenter = randomIntFromRange(50, 120)
-    this.lastMouse = {x: x,y: y};
-    this.update = () =>{
-        const lastPoint = {x: this.x, y: this.y}
-        this.radians += this.velocity
-
-        //Drag Effect
-        this.lastMouse += (mouse.x - this.lastMouse.x) * 0.05;
-        this.lastMouse += (mouse.y - this.lastMouse.y) * 0.05;
-
-        //Movement
-        this.x = mouse.x + Math.cos(this.radians) * this.distanceFromCenter;
-        this.y = mouse.y + Math.sin(this.radians) * this.distanceFromCenter;
-        this.draw(lastPoint);
-    };
-
-    this.draw = (lastPoint) => {
-        c.beginPath();
-        c.strokeStyle = this.color7;
-        c.lineWidth = this.radius;
-        c.moveTo(lastPoint.x, lastPoint.y);
-        c.lineTo(this.x, this.y);
-        c.stroke();
-        c.closePath();
-
-    };
-}*/
 function distance(x1, y1, x2, y2) {
     let xDistance = x2 - x1;
     let yDistance = y2 - y1;
     return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2))
 
 }
-
 
 
 //Init
@@ -178,12 +142,6 @@ function init() {
 
         particles2.push(new Particle2(x, y, radius, color));
     }
-    /*particles = [];
-    for(let i = 0; i < 100; i++) {
-        const radius = (Math.random() * 6) + 1
-        const color9 = colors[Math.floor(Math.random() * colors.length)]
-        particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius, color9));
-    };*/
 
 
 
@@ -201,11 +159,8 @@ addEventListener('click',function() {
 //Animation Loop
 function animate() {
     requestAnimationFrame(animate);
-    c.fillStyle = 'rgba(0, 0, 0, 0.15)';
+    c.fillStyle = 'rgba(0, 0, 0, 0.35)';
     c.fillRect(0, 0, canvas.width, canvas.height);
-    /*particles.forEach(particle => {
-        particle.update();
-    });*/
     particles2.forEach(particle => {
         particle.update(particles2);
     });
