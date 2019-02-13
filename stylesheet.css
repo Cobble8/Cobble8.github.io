@@ -81,3 +81,12 @@ p#HomeExplain:hover {
     background-color: #09a129;
     color:#44ccff;
 }
+#secretThingie {
+    color: #545E75;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    
+}
+#secretThingie:hover{
+    background-color: red;
+}
