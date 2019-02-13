@@ -145,7 +145,7 @@ function Particle2(x, y, radius) {
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
         c.fillStyle = this.color
         c.fill();
-        //c.lineWidth = '5'
+        //c.lineWidth = '4'
         c.closePath();
     }
 
@@ -203,7 +203,7 @@ addEventListener('click',function() {
 //Animation Loop
 function animate() {
     requestAnimationFrame(animate);
-    c.fillStyle = 'rgba(0, 0, 0, 0.50)';
+    c.fillStyle = 'rgba(0, 0, 0, 0.30)';
     c.fillRect(0, 0, canvas.width, canvas.height);
     particles2.forEach(particle => {
         particle.update(particles2);
