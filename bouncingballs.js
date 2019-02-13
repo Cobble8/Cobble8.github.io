@@ -143,9 +143,9 @@ function Particle2(x, y, radius) {
     this.draw = function() {
         c.beginPath();
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
-        c.strokeStyle = this.color
-        c.stroke();
-        c.lineWidth = '5'
+        c.fillStyle = this.color
+        c.fill();
+        //c.lineWidth = '5'
         c.closePath();
     }
 
@@ -167,7 +167,7 @@ function init() {
 
 
     for(let i = 0; i < 13; i++) {
-        const radius = 40;
+        const radius = 30;
         let x = randomIntFromRange(radius, canvas.width - radius);
         let y = randomIntFromRange(radius, canvas.height - radius);
         //const color = Colors[Math.floor(Math.random() * Colors.length)]//'#00FF00';
