@@ -8,6 +8,9 @@ const colors = [
     "#FF7B00",
     "#FFDD00",
 ]
+function randomIntFromRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+};
 var mouse = {
     x: undefined,
     y: undefined,
@@ -69,19 +72,57 @@ function resolveCollision(particle, otherParticle) {
     }
 }
 
-function Particle2(x, y, radius, color) {
+
+
+function Particle2(x, y, radius) {
     this.x = x;
+    this.r = 125;
+    this.g = 125;
+    this.b = 240;
     this.y = y;
+    this.counter = 0;
+    this.interval = 0;
     this.velocity = {
         x: (Math.random() - 0.5) * 2,
         y: (Math.random() - 0.5) * 2,
     }
     this.radius = radius;
-    this.color = color;
+    this.color = `rgb(${this.r}, ${this.g}, ${this.b})`
     this.mass = 1;
     this.update = function(particles2) {
         for(let i = 0; i < particles2.length; i++) {
             if(this == particles2[i]) continue;
+
+            //Interval
+            this.interval += 1;
+            if(this.interval == 25) this.interval = 0;
+            if(this.interval == 1) {
+
+            //Counter
+            this.counter += 1;
+            if(this.counter >= 345) this.counter = 0;
+
+            //R
+            if( this.counter > 0 && this.counter < 115) {
+                this.r++;
+                this.b--;
+            }
+    
+            //G
+            if(this.counter >= 115 && this.counter < 230) {
+                this.g++;
+                this.r--;
+            }
+    
+            //B
+            if(this.counter > 230 && this.counter < 345) {
+                this.b++;
+                this.g--;
+            }
+    
+            this.color = `rgb(${this.r}, ${this.g}, ${this.b})`;
+            }
+
             if(distance(this.x, this.y, particles2[i].x, particles2[i].y) - this.radius * 2 < 0) {
                 resolveCollision(this, particles2[i]);
             }
@@ -92,9 +133,9 @@ function Particle2(x, y, radius, color) {
                 this.velocity.y = -this.velocity.y;
             }
 
+
             this.x += this.velocity.x;
             this.y += this.velocity.y;
-            //this.color = ;
         }
         this.draw();
     }
@@ -105,8 +146,6 @@ function Particle2(x, y, radius, color) {
         c.strokeStyle = this.color
         c.stroke();
         c.lineWidth = '5'
-        c.fillStyle = 'black';
-        c.fill();
         c.closePath();
     }
 
@@ -124,12 +163,14 @@ function distance(x1, y1, x2, y2) {
 let particles2;
 function init() {
     particles2 = [];
-    let Colors = ['#00FF00', '#FAA916', '#1AFFD5', '#58FAF4', '#FE2E2E', '#FF00FF', '#FFFF00']
+    //let Colors = ['#00FF00', '#FAA916', '#1AFFD5', '#58FAF4', '#FE2E2E', '#FF00FF', '#FFFF00']
+
+
     for(let i = 0; i < 13; i++) {
         const radius = 40;
         let x = randomIntFromRange(radius, canvas.width - radius);
         let y = randomIntFromRange(radius, canvas.height - radius);
-        const color = Colors[Math.floor(Math.random() * Colors.length)]//'#00FF00';
+        //const color = Colors[Math.floor(Math.random() * Colors.length)]//'#00FF00';
 
         if(i != 0) {
             for(let j = 0; j < particles2.length; j++) {
@@ -142,7 +183,8 @@ function init() {
             }
         }
 
-        particles2.push(new Particle2(x, y, radius, color));
+
+        particles2.push(new Particle2(x, y, radius));
     }
 
 
