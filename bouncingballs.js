@@ -98,9 +98,10 @@ function Particle2(x, y, radius) {
             if(this.interval == 25) this.interval = 0;
             if(this.interval == 1) {
 
+            this.counter = 0;
             //Counter
+            if(this.counter > 345) this.counter = 0;
             this.counter += 1;
-            if(this.counter >= 345) this.counter = 0;
 
             //R
             if(this.counter >= 0 && this.counter < 115) {
