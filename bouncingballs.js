@@ -80,7 +80,7 @@ function Particle2(x, y, radius) {
     this.g = 125;
     this.b = 240;
     this.y = y;
-    this.counter = 0;
+    this.counter = 1;
     this.interval = 0;
     this.velocity = {
         x: (Math.random() - 0.5) * 2,
@@ -94,17 +94,16 @@ function Particle2(x, y, radius) {
             if(this == particles2[i]) continue;
 
             //Interval
-            this.interval += 1;
+            /*this.interval += 1;
             if(this.interval == 25) this.interval = 0;
-            if(this.interval == 1) {
+            if(this.interval == 1) {*/
 
-            this.counter = 0;
             //Counter
-            if(this.counter > 345) this.counter = 0;
-            this.counter += 1;
-
+            this.counter = 1;
+            if(this.counter >= 345) this.counter = 1;
+            this.counter++;
             //R
-            if(this.counter >= 0 && this.counter < 115) {
+            if(this.counter >= 1 && this.counter < 115) {
                 this.r++;
                 this.b--;
             }
@@ -120,9 +119,10 @@ function Particle2(x, y, radius) {
                 this.b++;
                 this.g--;
             }
+            //console.log(this.counter)
     
             this.color = `rgb(${this.r}, ${this.g}, ${this.b})`;
-            }
+            //}
 
             if(distance(this.x, this.y, particles2[i].x, particles2[i].y) - this.radius * 2 < 0) {
                 resolveCollision(this, particles2[i]);
