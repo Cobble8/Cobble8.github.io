@@ -4,8 +4,8 @@
     font-size: 25px;
     font-weight:bold;
     font-family: Ariel, Tahoma;
-    border-width: 3px;
-    border-color: black;
+    border-width: 10px;
+    border-color: #000000;
     }
     #nav ul{
     padding: 0;
