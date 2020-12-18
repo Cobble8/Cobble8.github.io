@@ -17,13 +17,13 @@
     #nav li{
     display: inline;
     padding: 5px;
-    vertical-align: top;
+    vertical-align: middle;
     }
     #nav a{
     text-decoration: none;
-    padding: 8px 8px 8px 8px;
+    padding: 8px 8px 8px 12px;
     color: #FA9637;
-    vertical-align: top;
+    vertical-align: middle;
     }
     #nav a:hover{
     color: #2C3E50;
