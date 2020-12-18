@@ -23,6 +23,7 @@
     text-decoration: none;
     padding: 8px 8px 8px 8px;
     color: white;
+    vertical-align: middle;
     }
     #nav a:hover{
     color: black;
