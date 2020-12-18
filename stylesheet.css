@@ -1,6 +1,6 @@
 #nav{
     background-color: #2C3E50;
-    height: 35px;
+    height: 45px;
     font-size: 25px;
     font-weight:bold;
     font-family: Ariel, Tahoma;
@@ -21,7 +21,7 @@
     }
     #nav a{
     text-decoration: none;
-    padding: 8px 8px 8px 4px;
+    padding: 8px 8px 8px 8px;
     color: #FA9637;
     vertical-align: middle;
     }
