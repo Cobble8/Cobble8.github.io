@@ -17,7 +17,7 @@
     #nav li{
     display: inline;
     padding: 10px;
-    vertical-align: top;
+    vertical-align: bottom;
     }
     #nav a{
     text-decoration: none;
