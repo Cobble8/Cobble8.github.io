@@ -4,21 +4,23 @@
     font-size: 25px;
     font-weight:bold;
     font-family: Ariel, Tahoma;
+    border-width: 3px;
+    border-color: black;
     }
     #nav ul{
     padding: 0;
-    margin: 0;
+    margin: 10;
     list-style-type: none;
     text-align: center;
     }
     #nav li{
     display: inline;
-    padding: 0px;
+    padding: 10px;
     vertical-align: middle;
     }
     #nav a{
     text-decoration: none;
-    padding: 0px 0px 0px 0px;
+    padding: 8px 8px 8px 8px;
     color: white;
     vertical-align: middle;
     }
