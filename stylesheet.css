@@ -1,6 +1,6 @@
 #nav{
     background-color: #2C3E50;
-    height: 45px;
+    height: 35px;
     font-size: 25px;
     font-weight:bold;
     font-family: Ariel, Tahoma;
@@ -17,13 +17,12 @@
     #nav li{
     display: inline;
     padding: 10px;
-    vertical-align: bottom;
+    vertical-align: middle;
     }
     #nav a{
     text-decoration: none;
     padding: 8px 8px 8px 8px;
     color: white;
-    vertical-align: top;
     }
     #nav a:hover{
     color: black;
